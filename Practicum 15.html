@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Music App Theme Switcher</title>
+  <style>
+  body {
+    font-family: Arial, sans-serif;
+    background: #fffbeb;
+    color: #1f2937;
+    text-align: center;
+    padding: 30px;
+    transition: 0.3s;
+  }
+
+  .card {
+    border: 2px solid #f59e0b;
+    padding: 20px;
+    max-width: 380px;
+    margin: 20px auto;
+    border-radius: 10px;
+  }
+
+  img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 6px;
+    margin-top: 10px;
+  }
+
+  button {
+    padding: 10px 18px;
+    background: #d97706;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: bold;
+    margin: 5px;
+  }
+
+  body.night {
+    background: #18181b;
+    color: #f4f4f5;
+  }
+
+  body.night .card {
+    border-color: #52525b;
+    background: #27272a;
+  }
+
+  body.light {
+    background: #fffbeb;
+    color: #1f2937;
+  }
+
+  body.light .card {
+    border-color: #f59e0b;
+    background: transparent;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    body:not(.light) {
+      background: #18181b;
+      color: #f4f4f5;
+    }
+    
+    body:not(.light) .card {
+      border-color: #52525b;
+      background: #27272a;
+    }
+  }
+</style>
+</head>
+<body>
+  <button onclick="setLight()">☀️ Light Mode</button>
+  <button onclick="setDark()">🌙 Dark Mode</button>
+  
+  <div class="card">
+    <h2>Feel the Rhythm Anywhere</h2>
+    <p>Stream lossless acoustic sessions and midnight lo-fi beats.</p>
+    <img src="image.png" alt="Music Studio">
+  </div>
+
+  <script>
+    function setDark() {
+      document.body.classList.add('night');
+      document.body.classList.remove('light');
+    }
+    function setLight() {
+      document.body.classList.add('light');
+      document.body.classList.remove('night');
+    }
+  </script>
+</body>
+</html>
